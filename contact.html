@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Global Offices &mdash; Convalt Energy</title>
+  <meta name="description" content="Contact Convalt Energy for utility solar partnerships, manufacturing procurement, green data hub co-location, or general inquiries.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <a href="index.html" class="brand-logo">
+      <span class="brand-symbol"></span>
+      CONVALT ENERGY
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link">3D Narrative</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="team.html" class="nav-link">Leadership</a></li>
+      <li><a href="media.html" class="nav-link">Media & Press</a></li>
+      <li><a href="resources.html" class="nav-link">Resources & ESG</a></li>
+      <li><a href="contact.html" class="nav-link active">Contact</a></li>
+    </ul>
+
+    <div class="header-right-actions">
+      <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Theme">☀️</button>
+      <a href="contact.html" class="btn btn-primary">Inquire</a>
+      <button id="mobile-toggle" class="mobile-menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <div id="mobile-drawer" class="mobile-drawer">
+    <a href="index.html" class="mobile-nav-link">3D Narrative</a>
+    <a href="projects.html" class="mobile-nav-link">Projects</a>
+    <a href="team.html" class="mobile-nav-link">Leadership</a>
+    <a href="media.html" class="mobile-nav-link">Media & Press</a>
+    <a href="resources.html" class="mobile-nav-link">Resources & ESG</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero" id="hero-contact">
+    <div class="container" style="position: relative; z-index: 2;">
+      <span class="eyebrow">PARTNERSHIPS & INQUIRIES</span>
+      <h1 class="page-hero-title heading-serif">Get in Touch</h1>
+      <p class="page-hero-subtitle">
+        Whether you are interested in solar module procurement, utility grid development, green AI compute co-location, or circular recycling, our engineering teams are ready to connect.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Form & Global Offices -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2">
+
+        <!-- Form -->
+        <div class="glass-card contact-box">
+          <span class="eyebrow">INQUIRY FORM</span>
+          <h2 class="heading-serif" style="margin-bottom: 1.5rem;">Send a Direct Message</h2>
+          <form id="contact-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label class="form-label" for="full-name">FULL NAME *</label>
+              <input type="text" id="full-name" class="form-input" placeholder="e.g. Sarah Jenkins" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">BUSINESS EMAIL *</label>
+              <input type="email" id="email" class="form-input" placeholder="s.jenkins@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inquiry-type">INQUIRY CATEGORY *</label>
+              <select id="inquiry-type" class="form-select" required>
+                <option value="">Select an Inquiry Type</option>
+                <option value="manufacturing">Solar Panel & Wafer Procurement</option>
+                <option value="solar-farm">Utility Solar & Storage Development</option>
+                <option value="datacenter">Green AI Data Hub Co-Location</option>
+                <option value="recycling">Solar Module Recycling & Reclamation</option>
+                <option value="media">Media & Investor Relations</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">PROJECT DETAILS / MESSAGE *</label>
+              <textarea id="message" class="form-textarea" rows="5" placeholder="Share your project capacity, timeframe, or specific inquiry requirements..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Submit Partnership Inquiry</button>
+            <div id="form-feedback" style="margin-top: 1rem; font-family: var(--font-mono); font-size: 0.85rem; display: none;"></div>
+          </form>
+        </div>
+
+        <!-- Global Offices -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <h2 class="heading-serif">Global Headquarters & Hubs</h2>
+
+          <div class="glass-card contact-box">
+            <span class="eyebrow">CORPORATE HEADQUARTERS</span>
+            <h3 class="card-title">New York, USA</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">
+              DigiCollect Corporation / Convalt Energy<br>
+              1185 Avenue of the Americas, 3rd Floor<br>
+              New York, NY 10036 USA
+            </p>
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-amber);">PHONE: +1 (212) 555-0190 | EMAIL: info@convalt.com</p>
+          </div>
+
+          <div class="glass-card contact-box">
+            <span class="eyebrow">MANUFACTURING GIGAFACTORY</span>
+            <h3 class="card-title">Watertown, New York</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">
+              Convalt Solar Manufacturing Hub<br>
+              2200 Corporate Drive<br>
+              Watertown, NY 13601 USA
+            </p>
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-teal);">PLANT CAPACITY: 3.5 GW Monocrystalline Wafer & Module</p>
+          </div>
+
+          <div class="glass-card contact-box">
+            <span class="eyebrow">EUROPEAN OPERATIONS</span>
+            <h3 class="card-title">Frankfurt, Germany</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">
+              Convalt Energy Europe GmbH<br>
+              Taunusanlage 8<br>
+              60329 Frankfurt am Main, Germany
+            </p>
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">FOCUS: European Grid Integration & Battery Storage</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <span class="brand-symbol"></span>
+            CONVALT ENERGY
+          </a>
+          <p>Accelerating the global transition to clean energy through integrated 3D manufacturing, utility power generation, green AI data hubs, and solar recycling.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">3D Narrative</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="team.html">Leadership</a></li>
+            <li><a href="media.html">Media & Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="resources.html">ESG Reports</a></li>
+            <li><a href="resources.html">Carbon Calculator</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Headquarters</h4>
+          <p style="font-size: 0.85rem;">DigiCollect / Convalt Energy<br>1185 Avenue of the Americas, 3rd Fl<br>New York, NY 10036 USA</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Convalt Energy & DigiCollect Corporation. All Rights Reserved.</span>
+        <span>Minimalist 3D Interactive WebGL Experience</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/ui/Navigation.js" type="module"></script>
+  <script type="module">
+    import { SubpageHeroCanvas } from './js/3d/SubpageHeroCanvas.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      new SubpageHeroCanvas('hero-contact', 'contact');
+
+      if (window.gsap) {
+        gsap.from('.contact-box', {
+          opacity: 0,
+          y: 40,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power2.out"
+        });
+      }
+    });
+
+    window.handleFormSubmit = function(e) {
+      e.preventDefault();
+      const feedback = document.getElementById('form-feedback');
+      feedback.style.display = 'block';
+      feedback.style.color = '#2DB7A1';
+      feedback.textContent = '✓ Thank you! Your inquiry has been transmitted to Convalt Energy engineering team. We will respond within 24 hours.';
+      document.getElementById('contact-form').reset();
+    };
+  </script>
+</body>
+</html>

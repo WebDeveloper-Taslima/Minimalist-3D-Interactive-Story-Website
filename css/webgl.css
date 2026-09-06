@@ -1,0 +1,307 @@
+/* 
+ * Convalt Energy - WebGL Viewport & Narrative HUD Overlay
+ * Styles for 3D Story Canvas, Floating UI, Chapter Progress & Controls
+ */
+
+/* WebGL Fullscreen Canvas Container */
+.webgl-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+#webgl-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  outline: none;
+}
+
+/* Fallback Canvas */
+#fallback-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 0;
+}
+
+/* Story Narrative Layout (Scroll Driver Container) */
+.story-scroll-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  pointer-events: none; /* Let scroll pass through to webgl canvas hover */
+}
+
+.story-chapter-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 5vw;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Floating Chapter Card HUD */
+.chapter-content-card {
+  pointer-events: auto;
+  max-width: 480px;
+  background: rgba(10, 13, 18, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.chapter-content-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chapter-number {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent-amber);
+  letter-spacing: 0.25em;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.chapter-title {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+.chapter-description {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-dark-secondary);
+  margin-bottom: 1.75rem;
+}
+
+.chapter-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Chapter Progress Bar HUD */
+.chapter-hud-tracker {
+  position: fixed;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.25rem;
+}
+
+.hud-dot-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--text-dark-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+.hud-dot-label {
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.hud-dot-item:hover .hud-dot-label,
+.hud-dot-item.active .hud-dot-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hud-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.hud-dot-item.active .hud-dot {
+  background: var(--accent-amber);
+  border-color: var(--accent-amber);
+  transform: scale(1.5);
+  box-shadow: 0 0 12px var(--accent-amber);
+}
+
+.hud-dot-item.active {
+  color: #FFFFFF;
+}
+
+/* Bottom Controls Overlay (Scroll Hint + Audio Synthesizer Toggle) */
+.story-bottom-hud {
+  position: fixed;
+  bottom: 2rem;
+  left: 2.5rem;
+  right: 2.5rem;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.scroll-hint-indicator {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--text-dark-secondary);
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  width: 40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-amber);
+  animation: scrollLineAnim 2s infinite ease-in-out;
+}
+
+@keyframes scrollLineAnim {
+  0% { left: -100%; }
+  50% { left: 0%; }
+  100% { left: 100%; }
+}
+
+.audio-drone-toggle {
+  pointer-events: auto;
+  background: rgba(18, 22, 30, 0.7);
+  border: 1px solid var(--accent-border);
+  backdrop-filter: blur(10px);
+  color: var(--text-dark-primary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.audio-drone-toggle:hover {
+  border-color: var(--accent-amber);
+  color: var(--accent-amber);
+}
+
+.audio-icon-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+
+.audio-bar {
+  width: 2px;
+  height: 100%;
+  background: var(--accent-amber);
+  animation: audioWave 1.2s infinite ease-in-out alternate;
+}
+
+.audio-bar:nth-child(2) { animation-delay: 0.2s; }
+.audio-bar:nth-child(3) { animation-delay: 0.4s; }
+
+.audio-drone-toggle.muted .audio-bar {
+  animation: none;
+  height: 2px;
+  background: var(--text-dark-secondary);
+}
+
+@keyframes audioWave {
+  0% { height: 3px; }
+  100% { height: 12px; }
+}
+
+/* WebGL Interactive Inspection Tooltips */
+.3d-tooltip {
+  position: absolute;
+  z-index: 30;
+  pointer-events: auto;
+  background: rgba(10, 13, 18, 0.85);
+  border: 1px solid var(--accent-amber);
+  backdrop-filter: blur(8px);
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  color: #FFF;
+  font-size: 0.8rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  transform: translate(-50%, -100%) scale(0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.3d-tooltip.visible {
+  opacity: 1;
+  transform: translate(-50%, -120%) scale(1);
+}
+
+@media (max-width: 768px) {
+  .chapter-content-card {
+    padding: 1.5rem;
+    max-width: 90vw;
+  }
+  .chapter-title {
+    font-size: 1.65rem;
+  }
+  .chapter-hud-tracker {
+    right: 1rem;
+  }
+  .hud-dot-label {
+    display: none;
+  }
+  .story-bottom-hud {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

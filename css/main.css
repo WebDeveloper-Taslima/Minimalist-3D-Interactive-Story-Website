@@ -1,0 +1,207 @@
+/* 
+ * Convalt Energy - Minimalist 3D Interactive Story Website
+ * Main Stylesheet & Design System
+ * Benchmark Reference: mont-fort.com
+ */
+
+:root {
+  /* Color Palette - Neutral, Calm, Premium Earth & Tech Tones */
+  --bg-dark: #0A0D12;
+  --bg-dark-card: rgba(18, 22, 30, 0.75);
+  --bg-light: #F7F6F2;
+  --bg-light-card: rgba(255, 255, 255, 0.85);
+
+  --text-dark-primary: #F0F3F8;
+  --text-dark-secondary: #8E9BAE;
+  --text-light-primary: #12161E;
+  --text-light-secondary: #5A6474;
+
+  --accent-amber: #E29938;
+  --accent-teal: #2DB7A1;
+  --accent-cyan: #38BDF8;
+  --accent-border: rgba(255, 255, 255, 0.12);
+  --accent-border-light: rgba(0, 0, 0, 0.08);
+
+  /* Typography */
+  --font-serif: "Cinzel", "Playfair Display", "Georgia", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  /* Transition timings */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --max-width: 1280px;
+  --header-height: 80px;
+}
+
+/* Base Reset & Globals */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-dark);
+  color: var(--text-dark-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.light-theme {
+  background-color: var(--bg-light);
+  color: var(--text-light-primary);
+  --accent-border: var(--accent-border-light);
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5 {
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.heading-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+p {
+  color: var(--text-dark-secondary);
+  font-weight: 300;
+  max-width: 65ch;
+}
+
+body.light-theme p {
+  color: var(--text-light-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+@media (max-width: 992px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid var(--accent-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-dark-primary);
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(8px);
+}
+
+.btn:hover {
+  background: var(--text-dark-primary);
+  color: var(--bg-dark);
+  border-color: var(--text-dark-primary);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--text-dark-primary);
+  color: var(--bg-dark);
+  border-color: var(--text-dark-primary);
+}
+
+.btn-primary:hover {
+  background: var(--accent-amber);
+  color: #000;
+  border-color: var(--accent-amber);
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: var(--bg-dark-card);
+  border: 1px solid var(--accent-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 8px;
+  padding: var(--space-md);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+body.light-theme .glass-card {
+  background: var(--bg-light-card);
+  border-color: rgba(0,0,0,0.08);
+}
+
+.glass-card:hover {
+  border-color: rgba(226, 153, 56, 0.4);
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects & Infrastructure &mdash; Convalt Energy</title>
+  <meta name="description" content="Explore Convalt Energy's renewable solar manufacturing gigafactories, utility-scale power projects, and green data infrastructure.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/main.css?v=2">
+  <link rel="stylesheet" href="./css/components.css?v=2">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <a href="./index.html" class="brand-logo">
+      <span class="brand-symbol"></span>
+      CONVALT ENERGY
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="./index.html" class="nav-link">3D Narrative</a></li>
+      <li><a href="./projects.html" class="nav-link active">Projects</a></li>
+      <li><a href="./team.html" class="nav-link">Leadership</a></li>
+      <li><a href="./media.html" class="nav-link">Media & Press</a></li>
+      <li><a href="./resources.html" class="nav-link">Resources & ESG</a></li>
+      <li><a href="./contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="header-right-actions">
+      <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Theme">☀️</button>
+      <a href="./contact.html" class="btn btn-primary">Inquire</a>
+      <button id="mobile-toggle" class="mobile-menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <div id="mobile-drawer" class="mobile-drawer">
+    <a href="./index.html" class="mobile-nav-link">3D Narrative</a>
+    <a href="./projects.html" class="mobile-nav-link">Projects</a>
+    <a href="./team.html" class="mobile-nav-link">Leadership</a>
+    <a href="./media.html" class="mobile-nav-link">Media & Press</a>
+    <a href="./resources.html" class="mobile-nav-link">Resources & ESG</a>
+    <a href="./contact.html" class="mobile-nav-link">Contact</a>
+  </div>
+
+  <!-- Page Hero with Animated Interactive Background Canvas -->
+  <section class="page-hero" id="hero-projects">
+    <div class="container" style="position: relative; z-index: 2;">
+      <span class="eyebrow">PORTFOLIO & ASSETS</span>
+      <h1 class="page-hero-title heading-serif">Renewable Infrastructure Projects</h1>
+      <p class="page-hero-subtitle">
+        Convalt Energy develops, owns, and operates utility-scale solar generation plants, advanced PV manufacturing gigafactories, and zero-carbon data infrastructure across North America.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Grid & Filters -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs" id="project-filters">
+        <button class="filter-tab-btn active" data-filter="all">ALL PROJECTS</button>
+        <button class="filter-tab-btn" data-filter="manufacturing">MANUFACTURING</button>
+        <button class="filter-tab-btn" data-filter="solar">SOLAR & STORAGE</button>
+        <button class="filter-tab-btn" data-filter="datacenter">GREEN DATA HUBS</button>
+        <button class="filter-tab-btn" data-filter="recycling">RECYCLING</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid-2" id="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card" data-category="manufacturing">
+          <div class="card-image-box" style="background-image: linear-gradient(to bottom, rgba(10,13,18,0.2), rgba(10,13,18,0.9)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="card-body">
+            <span class="card-category">SOLAR MANUFACTURING</span>
+            <h3 class="card-title">New York Solar Gigafactory</h3>
+            <p class="card-excerpt">
+              A 3.5 GW state-of-the-art domestic manufacturing facility producing high-efficiency monocrystalline PV ingots, wafers, cells, and solar modules.
+            </p>
+            <div class="card-meta-list">
+              <span>LOCATION: Watertown, NY</span>
+              <span>CAPACITY: 3.5 GW/yr</span>
+              <span>STATUS: Phase 1 Operational</span>
+            </div>
+            <div style="margin-top: 1.5rem;">
+              <a href="./project-detail.html?id=ny-gigafactory" class="btn btn-primary">View Case Study</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card" data-category="solar">
+          <div class="card-image-box" style="background-image: linear-gradient(to bottom, rgba(10,13,18,0.2), rgba(10,13,18,0.9)), url('https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="card-body">
+            <span class="card-category">SOLAR & STORAGE</span>
+            <h3 class="card-title">Sunfield Utility Solar & Storage Farm</h3>
+            <p class="card-excerpt">
+              500 MW single-axis tracking solar array paired with a 200 MW / 800 MWh utility-scale LFP energy storage system powering 140,000 homes.
+            </p>
+            <div class="card-meta-list">
+              <span>LOCATION: Texas, USA</span>
+              <span>CAPACITY: 500 MW Solar</span>
+              <span>STATUS: Grid Connected</span>
+            </div>
+            <div style="margin-top: 1.5rem;">
+              <a href="./project-detail.html?id=sunfield-solar" class="btn btn-primary">View Case Study</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card" data-category="datacenter">
+          <div class="card-image-box" style="background-image: linear-gradient(to bottom, rgba(10,13,18,0.2), rgba(10,13,18,0.9)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="card-body">
+            <span class="card-category">GREEN DATA HUBS</span>
+            <h3 class="card-title">Apex Zero-Carbon Compute Center</h3>
+            <p class="card-excerpt">
+              Co-located 100 MW high-density green AI compute cluster running 100% on dedicated solar generation with direct liquid cooling and PUE 1.07.
+            </p>
+            <div class="card-meta-list">
+              <span>LOCATION: Nevada, USA</span>
+              <span>COMPUTE: 100 MW AI Cluster</span>
+              <span>PUE: 1.07</span>
+            </div>
+            <div style="margin-top: 1.5rem;">
+              <a href="./project-detail.html?id=apex-datacenter" class="btn btn-primary">View Case Study</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card" data-category="recycling">
+          <div class="card-image-box" style="background-image: linear-gradient(to bottom, rgba(10,13,18,0.2), rgba(10,13,18,0.9)), url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="card-body">
+            <span class="card-category">RECYCLING</span>
+            <h3 class="card-title">Circular PV Material Reclamation Plant</h3>
+            <p class="card-excerpt">
+              Proprietary end-of-life solar panel recycling facility achieving 98% material recovery rate for silicon, glass, aluminum, and silver.
+            </p>
+            <div class="card-meta-list">
+              <span>LOCATION: New York, USA</span>
+              <span>RECOVERY RATE: 98%</span>
+              <span>STATUS: Commissioning</span>
+            </div>
+            <div style="margin-top: 1.5rem;">
+              <a href="./project-detail.html?id=pv-recycling-plant" class="btn btn-primary">View Case Study</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="./index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <span class="brand-symbol"></span>
+            CONVALT ENERGY
+          </a>
+          <p>Accelerating the global transition to clean energy through integrated 3D manufacturing, utility power generation, green AI data hubs, and solar recycling.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="./index.html">3D Narrative</a></li>
+            <li><a href="./projects.html">Projects</a></li>
+            <li><a href="./team.html">Leadership</a></li>
+            <li><a href="./media.html">Media & Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="./resources.html">ESG Reports</a></li>
+            <li><a href="./resources.html">Carbon Calculator</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Headquarters</h4>
+          <p style="font-size: 0.85rem;">DigiCollect / Convalt Energy<br>1185 Avenue of the Americas, 3rd Fl<br>New York, NY 10036 USA</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Convalt Energy & DigiCollect Corporation. All Rights Reserved.</span>
+        <span>Minimalist 3D Interactive WebGL Experience</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/vendor/gsap.min.js?v=2"></script>
+  <script src="./js/ui/Navigation.js?v=2" type="module"></script>
+  <script type="module">
+    import { SubpageHeroCanvas } from './js/3d/SubpageHeroCanvas.js?v=2';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      new SubpageHeroCanvas('hero-projects', 'projects');
+
+      if (window.gsap) {
+        gsap.from('.project-card', {
+          opacity: 0,
+          y: 40,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power2.out"
+        });
+      }
+    });
+
+    document.querySelectorAll('.filter-tab-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.filter-tab-btn').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+
+        const filter = e.target.dataset.filter;
+        document.querySelectorAll('.project-card').forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
